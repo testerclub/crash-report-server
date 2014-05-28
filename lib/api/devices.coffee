@@ -37,5 +37,5 @@ exports = module.exports =
         res.json device
 
   delete: (req, res) ->
-    req.models.Device.findOneAndRemove req.params.id, (err) ->
+    req.models.Device.findByIdAndRemove req.params.id, (err) ->
       res.send(if err then 500 else 200)

@@ -6,8 +6,8 @@ exports = module.exports =
   list: (req, res) ->
     if req.param('brand')? and req.param('model')?
       req.models.Device.findOne
-        'build.brand': req.param('brand') or 'Xiaomi'
-        'build.model': req.param('model') or 'MI 3'
+        'build.brand': req.param('brand')
+        'build.model': req.param('model')
       , 'company', (err, device) ->
         if device?
           req.models.Post.find
@@ -38,7 +38,7 @@ exports = module.exports =
   create: (req, res) ->
     req.models.Post.create {
       company: req.body.company
-      field: req.body.field
+      field: req.body.field or 'text'
       value: req.body.value
     }, (err, post) ->
       if err
@@ -61,5 +61,5 @@ exports = module.exports =
         res.json post
 
   delete: (req, res) ->
-    req.models.Post.findOneAndRemove req.params.id, (err) ->
+    req.models.Post.findByIdAndRemove req.params.id, (err) ->
       res.send(if err then 500 else 200)

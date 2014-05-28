@@ -1,0 +1,46 @@
+<div class="navbar navbar-inverse navbar-fixed-top" role="navigation">
+  <div class="container-fluid">
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <a class="navbar-brand" href="#">Settings</a>
+    </div>
+  </div>
+</div>
+
+<div class="container-fluid">
+  <div class="row">
+    <div class="col-sm-3 col-md-2 sidebar">
+      <ul class="nav nav-sidebar">
+        <li><a href="#devices">Devices</a></li>
+        <li><a href="#">Posts</a></li>
+      </ul>
+    </div>
+    <div class="col-sm-9 col-sm-offset-3 col-md-10 col-md-offset-2 main">
+      <h1 class="page-header">Device Detail</h1>
+      <form role="form" ng-submit="save(device)">
+        <div class="form-group">
+          <label for="deviceId">Device ID: </label><span class="text-info">  {{device._id || ''}}</span>
+          <input type="hidden" ng-model="device._id" class="form-control" id="deviceId">
+        </div>
+        <div class="form-group">
+          <label for="company">Company Name</label>
+          <input type="text" ng-model="device.company" class="form-control" id="company" placeholder="Company name" value="{{device.company}}">
+        </div>
+        <div class="form-group">
+          <label for="brand">Brand</label>
+          <input type="text" ng-model="device.build.brand" class="form-control" id="brand" placeholder="Brand name" value="{{device.build.brand}}">
+        </div>
+        <div class="form-group">
+          <label for="model">Model</label>
+          <input type="text" ng-model="device.build.model" class="form-control" id="model" placeholder="Model name" value="{{device.build.model}}">
+        </div>
+        <button type="submit" class="btn btn-default" value="Submit">Save</button>
+      </form>
+    </div>
+  </div>
+</div>

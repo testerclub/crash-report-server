@@ -31,5 +31,5 @@ exports = module.exports =
         res.json issue
 
   delete: (req, res) ->
-    req.models.Issue.findOneAndRemove req.params.id, (err) ->
+    req.models.Issue.findByIdAndRemove req.params.id, (err) ->
       res.send(if err then 500 else 200)
