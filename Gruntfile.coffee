@@ -357,6 +357,7 @@ module.exports = (grunt) ->
     "autoprefixer"
     "karma"
   ]
+
   grunt.registerTask "build", [
     "clean:dist"
     "useminPrepare"
@@ -377,11 +378,13 @@ module.exports = (grunt) ->
     "rev"
     "usemin"
   ]
+
   grunt.registerTask "heroku", [
     "build"
     "clean:heroku"
     "copy:heroku"
   ]
+
   grunt.registerTask "default", [
     "jshint"
     "test"
