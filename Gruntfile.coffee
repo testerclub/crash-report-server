@@ -363,7 +363,7 @@ module.exports = (grunt) ->
     "useminPrepare"
     # "concurrent:dist"
     "coffee"
-    "compass:dist"
+    # "compass:dist"
     "copy:styles"
     "imagemin"
     "svgmin"
