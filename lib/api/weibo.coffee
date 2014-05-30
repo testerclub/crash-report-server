@@ -31,7 +31,6 @@ exports = module.exports =
     posts: posts
 
   reload: (req, res) ->
-    console.log req.body
     retrieveDevices()
     res.send 200
 
