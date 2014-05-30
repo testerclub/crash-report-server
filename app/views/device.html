@@ -31,6 +31,7 @@
               <th>Company</th>
               <th>Brand</th>
               <th>Model</th>
+              <th>Count</th>
               <th></th>
             </tr>
           </thead>
@@ -40,10 +41,11 @@
               <td>{{device.company}}</td>
               <td>{{device.build.brand}}</td>
               <td>{{device.build.model}}</td>
+              <td>{{device.count}}</td>
               <td><a ng-click="removeDevice(device)" class="btn-link">Delete</a></td>
             </tr>
             <tr>
-              <td colspan="5"><button ng-click="addDevice()" type="button" class="btn btn-primary">Add</button></td>
+              <td colspan="6"><button ng-click="addDevice()" type="button" class="btn btn-primary">Add</button></td>
             </tr>
           </tbody>
         </table>

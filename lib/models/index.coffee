@@ -20,6 +20,7 @@ mongoose.connection.once 'open', ->
     build:
       brand: String
       model: String
+    count: Number
 
   Device = mongoose.model('Device', deviceSchema)
 

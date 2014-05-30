@@ -12,6 +12,14 @@ URL_DEVICES = "#{URL_PREFIX}/devices.md"
 exports = module.exports =
   list: (req, res) ->
     if req.param('brand')? and req.param('model')?
+      req.models.Device.update {
+            'build.brand': req.param('brand')
+            'build.model': req.param('model')
+          }, {
+            $inc: {count: 1}
+          }, {
+            upsert: true
+          }, (err, num) ->
       for company, builds of devices
         for build in builds
           if build.brand is req.param('brand') and build.model is req.param('model')
