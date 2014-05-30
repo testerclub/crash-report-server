@@ -13,6 +13,7 @@ exports.awesomeThings = (req, res) ->
 exports.issues = require './issues'
 exports.devices = require './devices'
 exports.posts = require './posts'
+exports.weibo = require './weibo'
 
 exports.setup = ->
   require('../models').init

@@ -71,6 +71,9 @@ app.post "/api/posts", api.posts.create
 app.post "/api/posts/:id", api.posts.update
 app.delete "/api/posts/:id", api.posts.delete
 
+app.get "/api/weibo", api.weibo.list
+app.post "/api/weibo/reload", api.weibo.reload
+
 app.all "/api/*", (req, res) -> res.json 404, error: "API Not Found."
 
 app.get '/views/*', routes.views
