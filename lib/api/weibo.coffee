@@ -23,6 +23,12 @@ exports = module.exports =
       for company, builds of devices
         for build in builds
           if build.brand is req.param('brand') and build.model is req.param('model')
+            req.models.Device.findOneAndUpdate {
+                  'build.brand': build.brand
+                  'build.model': build.model
+                }, {
+                  $set: {company: company}
+                }, (err, num) ->
             return res.json posts[company] or {}
     res.send 404
 
