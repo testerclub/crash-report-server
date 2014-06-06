@@ -29,8 +29,8 @@ exports = module.exports =
                 }, {
                   $set: {company: company}
                 }, (err, num) ->
-            return res.json posts[company] or {}
-    res.send 404
+            return res.json(posts[company] or posts['default'] or {})
+    res.json posts['default']
 
   data: ->
     devices: devices
@@ -46,6 +46,7 @@ retrieveDevices = ->
       lines = body.match(/[^\r\n]+/g)
       tmpDevices = {}
       company = null
+      retrieveWeibo 'default'
       for line in lines
         if m = /^##\s+(.+)\s*/g.exec(line)
           company = m[1].trim()
