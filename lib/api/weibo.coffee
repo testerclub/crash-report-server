@@ -52,7 +52,7 @@ retrieveDevices = ->
           company = m[1].trim()
           retrieveWeibo company  # retrieve weibo content of the company
           tmpDevices[company] = []
-        else if m = /^-\s+([\w\s]+)\|([\w\s]+)/g.exec(line)
+        else if m = /^-\s+([\w\s\-]+)\|([\w\s\-]+)/g.exec(line)
           if company?
             tmpDevices[company].push {brand: m[1].trim(), model: m[2].trim()}
       devices = tmpDevices
